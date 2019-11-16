@@ -1,0 +1,1 @@
+This is a prototype under development for AidTrace, an application that empowers users to make more traceable charity donations for natural disaster relief. AidTrace is a decentralized application built on the Ethereum blockchain.
