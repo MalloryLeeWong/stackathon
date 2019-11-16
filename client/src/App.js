@@ -5,10 +5,11 @@ import getWeb3 from "./getWeb3";
 import "./App.css";
 
 class App extends Component {
-  state = { storageValue: 0, web3: null, accounts: null, contract: null };
+  state = { storageValue: '', web3: null, accounts: null, contract: null };
 
   componentDidMount = async () => {
     try {
+      console.log('componentDidMount')
       // Get network provider and web3 instance.
       const web3 = await getWeb3();
 
@@ -35,14 +36,29 @@ class App extends Component {
     }
   };
 
+  // runExample = async () => {
+  //   const { accounts, contract } = this.state;
+
+  //   // Stores a given value, 5 by default.
+  //   await contract.methods.set(5).send({ from: accounts[0] });
+
+  //   // Get the value from the contract to prove it worked.
+  //   const response = await contract.methods.get().call();
+
+  //   // Update state with the result.
+  //   this.setState({ storageValue: response });
+  // };
+
   runExample = async () => {
-    const { accounts, contract } = this.state;
+    const { contract } = this.state;
 
     // Stores a given value, 5 by default.
-    await contract.methods.set(5).send({ from: accounts[0] });
+    // await contract.methods.determinePayout(8, );
 
     // Get the value from the contract to prove it worked.
-    const response = await contract.methods.get().call();
+    const response = await contract.methods.getBool().call()
+
+    console.log('val in contract', response)
 
     // Update state with the result.
     this.setState({ storageValue: response });
@@ -56,15 +72,10 @@ class App extends Component {
       <div className="App">
         <h1>Aid Trace</h1>
         <p>Make a donation today that you can trace.</p>
-        <h2>Donation Contract</h2>
-        <p>
-          If your contracts compiled and migrated successfully, below will show
-          a stored value of 5 (by default).
-        </p>
-        <p>
-          Try changing the value stored on <strong>line 40</strong> of App.js.
-        </p>
-        <div>The stored value is: {this.state.storageValue}</div>
+        <div className="Contract">
+          <h3>Donation Contract</h3>
+        </div>
+        <div>Payout status: {this.state.storageValue}</div>
       </div>
     );
   }

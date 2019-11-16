@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  color: darkcyan;
+  background: white;
 }
 
 .App-logo {
@@ -19,4 +21,10 @@
 
 .App-link {
   color: #09d3ac;
+}
+
+.Contract {
+  text-align: center;
+  color: grey;
+  background: white;
 }

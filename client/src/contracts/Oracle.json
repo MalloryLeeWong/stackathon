@@ -1,0 +1,82 @@
+{
+  "contractName": "Oracle",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol\":\"Oracle\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol\":{\"keccak256\":\"0xa796c14239164d27c709aeccb1c47f637c0e0741c98cadddf98b351fea5707c6\",\"urls\":[\"bzz-raw://97d21c000014835335e860aa4aba7517d86520f1e0116545d804471a2556168e\",\"dweb:/ipfs/QmQNsan72KEE5ckRz4N87wJHo7mtTEEEJWD8yU7KdgyiqS\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a723158208b33313fba281e8f247124b984c253aae89f84b6f90810ff5c421ed877d0657164736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a723158208b33313fba281e8f247124b984c253aae89f84b6f90810ff5c421ed877d0657164736f6c634300050c0032",
+  "sourceMap": "33:22:1:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;33:22:1;;;;;;;",
+  "deployedSourceMap": "33:22:1:-;;;;;",
+  "source": "// oracle contract will go here\n\ncontract Oracle {\n\n\n\n}\n\n",
+  "sourcePath": "/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol",
+  "ast": {
+    "absolutePath": "/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol",
+    "exportedSymbols": {
+      "Oracle": [
+        58
+      ]
+    },
+    "id": 59,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 58,
+        "linearizedBaseContracts": [
+          58
+        ],
+        "name": "Oracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 59,
+        "src": "33:22:1"
+      }
+    ],
+    "src": "33:24:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol",
+    "exportedSymbols": {
+      "Oracle": [
+        58
+      ]
+    },
+    "id": 59,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 58,
+        "linearizedBaseContracts": [
+          58
+        ],
+        "name": "Oracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 59,
+        "src": "33:22:1"
+      }
+    ],
+    "src": "33:24:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.18",
+  "updatedAt": "2019-11-16T22:41:09.261Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

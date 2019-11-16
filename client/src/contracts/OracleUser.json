@@ -1,0 +1,120 @@
+{
+  "contractName": "OracleUser",
+  "abi": [],
+  "metadata": "{\"compiler\":{\"version\":\"0.5.12+commit.7709ece9\"},\"language\":\"Solidity\",\"output\":{\"abi\":[],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol\":\"OracleUser\"},\"evmVersion\":\"petersburg\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol\":{\"keccak256\":\"0xab24b33d85c5180891ba0ccc8112e25d63de48460874d7dd7754c2b000965e8b\",\"urls\":[\"bzz-raw://438b4dd697359c5dede1a72560e1a2c60b229ca0e0536d598ace9c8a03063c8e\",\"dweb:/ipfs/Qmc6ySm4BnCTWYhJVv5fSSqmuyoYjnutYihvedgP3KKp8j\"]}},\"version\":1}",
+  "bytecode": "0x6080604052348015600f57600080fd5b50603e80601d6000396000f3fe6080604052600080fdfea265627a7a72315820e69d55cbfe69e83202132f2a56d1354626170f73677878e93c277939bec04e4d64736f6c634300050c0032",
+  "deployedBytecode": "0x6080604052600080fdfea265627a7a72315820e69d55cbfe69e83202132f2a56d1354626170f73677878e93c277939bec04e4d64736f6c634300050c0032",
+  "sourceMap": "102:24:2:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;102:24:2;;;;;;;",
+  "deployedSourceMap": "102:24:2:-;;;;;",
+  "source": "// oracle contract will go here\n\ncontract Oracle {\n\n}\n\n// this contract will return the external data\ncontract OracleUser {\n\n}\n",
+  "sourcePath": "/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol",
+  "ast": {
+    "absolutePath": "/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol",
+    "exportedSymbols": {
+      "Oracle": [
+        81
+      ],
+      "OracleUser": [
+        82
+      ]
+    },
+    "id": 83,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 81,
+        "linearizedBaseContracts": [
+          81
+        ],
+        "name": "Oracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 83,
+        "src": "33:20:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 82,
+        "linearizedBaseContracts": [
+          82
+        ],
+        "name": "OracleUser",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 83,
+        "src": "102:24:2"
+      }
+    ],
+    "src": "33:94:2"
+  },
+  "legacyAST": {
+    "absolutePath": "/Users/malloryleewong/Desktop/sr-phase/stackathon/contracts/Oracle.sol",
+    "exportedSymbols": {
+      "Oracle": [
+        81
+      ],
+      "OracleUser": [
+        82
+      ]
+    },
+    "id": 83,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 81,
+        "linearizedBaseContracts": [
+          81
+        ],
+        "name": "Oracle",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 83,
+        "src": "33:20:2"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 82,
+        "linearizedBaseContracts": [
+          82
+        ],
+        "name": "OracleUser",
+        "nodeType": "ContractDefinition",
+        "nodes": [],
+        "scope": 83,
+        "src": "102:24:2"
+      }
+    ],
+    "src": "33:94:2"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.5.12+commit.7709ece9.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "3.0.18",
+  "updatedAt": "2019-11-16T21:09:07.154Z",
+  "devdoc": {
+    "methods": {}
+  },
+  "userdoc": {
+    "methods": {}
+  }
+}

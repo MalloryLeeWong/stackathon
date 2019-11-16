@@ -1,6 +1,6 @@
 pragma solidity ^0.5.0;
 
-contract Donate {
+contract SimpleStorage {
   bool payout = false;
   address donor;
 
@@ -33,6 +33,11 @@ contract Donate {
     deposits[charity] = 0;
     charity.transfer(payment);
   }
+
+  function getBool() public view returns (bool) {
+    return payout;
+  }
+
 }
 
 // contract SimpleStorage {
