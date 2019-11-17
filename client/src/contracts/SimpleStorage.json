@@ -3598,11 +3598,12 @@
       "events": {},
       "links": {},
       "address": "0x815BF7c32D3E24cAef767441Ad3310B96e5AB29e",
-      "transactionHash": "0xff07ac144fa6fcea378e5a76a53b08d0c3d9b5979cab2234c839b4470cc941c8"
+      "transactionHash": "0x148cb1e435b2f272cd31dee494b7b5593e0b7258c799c8e37a27ea1ce0cd106d"
     }
   },
   "schemaVersion": "3.0.18",
-  "updatedAt": "2019-11-16T22:41:06.491Z",
+  "updatedAt": "2019-11-17T14:30:54.520Z",
+  "networkType": "ethereum",
   "devdoc": {
     "methods": {}
   },

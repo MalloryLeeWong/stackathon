@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./getWeb3";
+import Donate from "./Donate"
+import Withdraw from "./Withdraw"
 
 import "./App.css";
 
@@ -73,9 +75,14 @@ class App extends Component {
         <h1>Aid Trace</h1>
         <p>Make a donation today that you can trace.</p>
         <div className="Contract">
-          <h3>Donation Contract</h3>
+          {/* <h3>Donation Contract</h3> */}
+          <Donate />
         </div>
-        <div>Payout status: {this.state.storageValue}</div>
+        <div className="Withdraw">
+          <Withdraw />
+          <p>Payout status: {this.state.storageValue}</p>
+        </div>
+
       </div>
     );
   }

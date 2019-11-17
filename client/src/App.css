@@ -25,6 +25,13 @@
 
 .Contract {
   text-align: center;
+  /* color: palevioletred; */
+  color: palevioletred;
+  background: white;
+}
+
+.Withdraw {
+  text-align: center;
   color: grey;
   background: white;
 }
