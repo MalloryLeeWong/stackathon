@@ -21,10 +21,13 @@ class Oracle extends Component {
   async handleSubmit(event) {
     try {
       event.preventDefault();
+
       this.setState({message: 'Updating seismicity data...'})
-      await this.props.contract.methods.deposit(this.state.address).send({ from: this.props.accounts[0], value: this.props.web3.utils.toWei(this.state.ETH, 'ether')});
+
+      await this.props.contract.methods.determinePayout(this.state.seismicity, this.state.address).send({ from: this.state.address});
+
       this.setState({
-        ETH: '',
+        seismicity: '',
         address: '',
         message: 'Seismicity data updated!'
       });
@@ -61,7 +64,7 @@ class Oracle extends Component {
           />
         </label>
 
-        <button type="submit">Donate</button>
+        <button type="submit">Update</button>
       </form>
       <div>
         <p>Data Status: {this.state.message}</p>

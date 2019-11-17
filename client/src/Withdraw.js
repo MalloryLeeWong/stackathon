@@ -5,7 +5,8 @@ class Withdraw extends Component {
     super(props)
     this.state = {
       ETH: 0,
-      address: '',
+      addressCharity: '',
+      addressDonor: '',
       message: 'Please submit donation details above.'
     }
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -20,15 +21,11 @@ class Withdraw extends Component {
 
   async handleSubmit(event) {
     try {
-      // const oracleAddress = "0x031b64725dC73CC33CBAe743D1904A57EF4b60C1"
-
       event.preventDefault()
 
       this.setState({message: 'Waiting on transaction success...'})
 
-      // await this.props.contract.methods.determinePayout(8, oracleAddress).send({from: oracleAddress});
-
-      const response = await this.props.contract.methods.withdraw(this.state.address).send({ from: this.props.accounts[0], value: this.props.web3.utils.toWei('1', 'ether')});
+      const response = await this.props.contract.methods.withdraw(this.state.addressCharity).send({ from: this.props.accounts[0]});
 
       console.log('RESPONSE', response)
 
@@ -47,18 +44,27 @@ class Withdraw extends Component {
   }
 
   render() {
-    console.log('this.props.accounts[0]', this.props.accounts[0])
+    // console.log('this.state.addressDonor', this.state.addressDonor)
     return (
       <div>
         <p>If you are the charity, please click here to withdraw the donation:</p>
       <form onSubmit={this.handleSubmit}>
+      <label>
+          Donor's Address:
+          <input
+            type="text"
+            name="addressDonor"
+            onChange={this.handleChange}
+            value={this.state.addressDonor}
+          />
+        </label>
         <label>
           Charity's Address:
           <input
             type="text"
-            name="address"
+            name="addressCharity"
             onChange={this.handleChange}
-            value={this.state.address}
+            value={this.state.addressCharity}
           />
         </label>
 
