@@ -45,6 +45,7 @@ class Withdraw extends Component {
 
   render() {
     // console.log('this.state.addressDonor', this.state.addressDonor)
+    console.log('WITHDRAW: this.props.accounts[0]', this.props.accounts[0])
     return (
       <div>
         <p>If you are the charity, please click here to withdraw the donation:</p>

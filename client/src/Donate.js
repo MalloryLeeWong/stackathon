@@ -37,6 +37,7 @@ class Donate extends Component {
   }
 
   render() {
+    console.log('DONATE: this.props.accounts[0]', this.props.accounts[0])
     return (
       <div>
         <p>Donate today:</p>
