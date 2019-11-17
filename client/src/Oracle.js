@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 
-class Donate extends Component {
+class Oracle extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ETH: '',
+      seismicity: '',
       address: '',
-      message: 'Please submit donation details above.'
+      message: 'Please submit seismicity data above.'
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -21,16 +21,16 @@ class Donate extends Component {
   async handleSubmit(event) {
     try {
       event.preventDefault();
-      this.setState({message: 'Waiting on transaction success...'})
+      this.setState({message: 'Updating seismicity data...'})
       await this.props.contract.methods.deposit(this.state.address).send({ from: this.props.accounts[0], value: this.props.web3.utils.toWei(this.state.ETH, 'ether')});
       this.setState({
         ETH: '',
         address: '',
-        message: 'Your donation was sent!'
+        message: 'Seismicity data updated!'
       });
     } catch (error) {
       alert(
-        `Failed donation submission.`,
+        `Failed oracle submission.`,
       );
       console.error(error)
     }
@@ -39,20 +39,20 @@ class Donate extends Component {
   render() {
     return (
       <div>
-        <p>Donate today:</p>
+        <p>If you are the oracle, please enter latest seismicity data:</p>
       <form onSubmit={this.handleSubmit}>
         <label>
-          Donation Amount (ETH):
+          Seismicity Level:
           <input
-            type="text"
-            name="ETH"
+            type="number"
+            name="seismicity"
             onChange={this.handleChange}
-            value={this.state.ETH}
+            value={this.state.seismicity}
           />
         </label>
 
         <label>
-          Charity's Address:
+          Oracle's Address:
           <input
             type="text"
             name="address"
@@ -64,11 +64,11 @@ class Donate extends Component {
         <button type="submit">Donate</button>
       </form>
       <div>
-        <p>Donation Status: {this.state.message}</p>
+        <p>Data Status: {this.state.message}</p>
       </div>
       </div>
     );
   }
 }
 
-export default Donate
+export default Oracle

@@ -26,7 +26,7 @@ contract SimpleStorage {
     }
   }
 
-  function withdraw(address payable charity) public {
+  function withdraw(address payable charity) public payable {
     require(payout == true, "Your donation will be sent once an earthquake of at least 7.0 is reported.");
     require(msg.sender == charity, "Only the designated charity can withdraw the donation.");
     uint payment = deposits[charity];

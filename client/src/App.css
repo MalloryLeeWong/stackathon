@@ -32,6 +32,22 @@
 
 .Withdraw {
   text-align: center;
+  color: #33adff;
+  background: white;
+}
+
+.Oracle {
+  text-align: center;
   color: grey;
   background: white;
 }
+
+p {
+  font-size: medium;
+  /* font-family: 'Courier New', Courier, monospace; */
+}
+
+h2 {
+  font-size: large;
+}
+

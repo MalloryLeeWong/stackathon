@@ -3,6 +3,7 @@ import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./getWeb3";
 import Donate from "./Donate"
 import Withdraw from "./Withdraw"
+import Oracle from "./Oracle"
 import "./App.css";
 
 class App extends Component {
@@ -59,13 +60,19 @@ class App extends Component {
     }
     return (
       <div className="App">
-        <h1>Aid Trace</h1>
-        <p>Make a donation today that you can trace.</p>
+        <h1>AidTrace</h1>
+        <h2>Make a donation today that you can trace.</h2>
+        <br></br>
         <div className="Contract">
           <Donate web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
         </div>
+        <br></br>
+        <div className="Oracle">
+          <Oracle web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
+        </div>
+        <br></br>
         <div className="Withdraw">
-          <Withdraw web3={this.state.web3} contract={this.state.contract}/>
+          <Withdraw web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
         </div>
       </div>
     );
