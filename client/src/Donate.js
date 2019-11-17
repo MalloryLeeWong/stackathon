@@ -1,15 +1,12 @@
 import React, { Component } from "react";
-// import SimpleStorageContract from "./contracts/SimpleStorage.json";
-// import getWeb3 from "./getWeb3";
-
-import "./App.css";
 
 class Donate extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      ETH: 0,
-      address: ''
+      ETH: '',
+      address: '',
+      message: 'Please submit donation details above.'
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
@@ -21,17 +18,27 @@ class Donate extends Component {
     });
   }
 
-  handleSubmit(event) {
-    event.preventDefault();
-    this.props.addCampus(this.state);
-    this.setState({
-      name: '',
-      address: '',
-    });
+  async handleSubmit(event) {
+    try {
+      event.preventDefault();
+      this.setState({message: 'Waiting on transaction success...'})
+      await this.props.contract.methods.deposit(this.state.address).send({ from: this.props.accounts[0], value: this.props.web3.utils.toWei(this.state.ETH, 'ether')});
+      this.setState({
+        ETH: '',
+        address: '',
+        message: 'Your donation was sent!'
+      });
+    } catch (error) {
+      alert(
+        `Failed handle submit.`,
+      );
+      console.error(error)
+    }
   }
 
   render() {
     return (
+      <div>
       <form onSubmit={this.handleSubmit}>
         <label>
           Donation Amount (ETH):
@@ -55,10 +62,12 @@ class Donate extends Component {
 
         <button type="submit">Donate</button>
       </form>
+      <div>
+        <p>Donation Status: {this.state.message}</p>
+      </div>
+      </div>
     );
   }
-
 }
-
 
 export default Donate

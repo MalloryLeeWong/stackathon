@@ -1,8 +1,4 @@
 import React, { Component } from "react";
-// import SimpleStorageContract from "./contracts/SimpleStorage.json";
-// import getWeb3 from "./getWeb3";
-
-import "./App.css";
 
 class Withdraw extends Component {
   constructor(props) {
@@ -33,7 +29,7 @@ class Withdraw extends Component {
   render() {
     return (
       <div>
-        <p>If you are the charity, click here to withdraw:</p>
+        <p>If you are the charity, click here to withdraw the donation:</p>
       <form onSubmit={this.handleSubmit}>
         <label>
           Charity's Address:
@@ -50,8 +46,6 @@ class Withdraw extends Component {
       </div>
     );
   }
-
 }
-
 
 export default Withdraw

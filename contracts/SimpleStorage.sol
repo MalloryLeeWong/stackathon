@@ -34,18 +34,17 @@ contract SimpleStorage {
     charity.transfer(payment);
   }
 
-  function getBool() public view returns (bool) {
-    return payout;
+  function getBalance(address charity) public view returns (uint) {
+    return deposits[charity];
   }
-
 }
 
 // contract SimpleStorage {
 //   uint storedData;
 
-//   function set(uint x) public {
-//     storedData = x;
-//   }
+  // function set(uint x) public {
+  //   storedData = x;
+  // }
 
 //   function get() public view returns (uint) {
 //     return storedData;
