@@ -25,7 +25,7 @@ class Withdraw extends Component {
 
       this.setState({message: 'Waiting on transaction success...'})
 
-      const response = await this.props.contract.methods.withdraw(this.state.addressCharity).send({ from: this.props.accounts[0]});
+      const response = await this.props.contract.methods.withdraw(this.state.addressCharity).send({ from: this.state.addressCharity});
 
       console.log('RESPONSE', response)
 
@@ -36,7 +36,7 @@ class Withdraw extends Component {
       });
     } catch (error) {
       alert(
-        `Failed withdrawal submission.`,
+        `Donation can be withdrawn once an earthquake of at least 7.0 magnitude has been reported.`,
       );
       console.error(error)
     }
