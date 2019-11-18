@@ -16,14 +16,13 @@ class Routes extends Component {
       <Router>
         <div id="root">
           <Switch>
-          {/* Routes placed here are available to all visitors */}
             <Route exact path="/" component={Homepage} />
             <Route exact path="/donate" component={Donate} />
             <Route exact path="/oracle" component={Oracle} />
             <Route exact path="/withdraw" component={Withdraw} />
           </Switch>
         </div>
-      </Router>
+     </Router>
 
     )
   }

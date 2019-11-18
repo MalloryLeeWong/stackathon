@@ -38,9 +38,6 @@ class Withdraw extends Component {
         // Set web3, accounts, and contract to the state.
         this.setState({ web3, accounts, contract: instance });
 
-        console.log('Hompage: this.state.accounts', this.state.accounts)
-        console.log('Hompage: this.state.contract', this.state.contract)
-
       } catch (error) {
         alert(
           `Failed to load web3, accounts, or contract.`,
@@ -61,9 +58,7 @@ class Withdraw extends Component {
 
       this.setState({message: 'Waiting on transaction success...'})
 
-      const response = await this.state.contract.methods.withdraw(this.state.addressCharity).send({ from: this.state.addressCharity});
-
-      console.log('RESPONSE', response)
+      await this.state.contract.methods.withdraw(this.state.addressCharity).send({ from: this.state.addressCharity});
 
       this.setState({
         name: '',
@@ -73,7 +68,7 @@ class Withdraw extends Component {
       });
     } catch (error) {
       alert(
-        `Donation can be withdrawn once an earthquake of at least 7.0 magnitude has been reported.`,
+        `Donation can be withdrawn once an earthquake of at least 8.0 magnitude has been reported.`,
       );
       console.error(error)
     }
@@ -111,7 +106,7 @@ class Withdraw extends Component {
         <button className="btn" type="submit">Withdraw Donation</button>
       </form>
       <div>
-        <p>Withdrawal Status: {this.state.message}</p>
+        <p className="italic">Withdrawal Status: {this.state.message}</p>
       </div>
       </div>
       </div>

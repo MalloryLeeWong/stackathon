@@ -26,13 +26,13 @@
 .Contract {
   text-align: center;
   /* color: palevioletred; */
-  color: palevioletred;
+  color: grey;
   background: white;
 }
 
 .Withdraw {
   text-align: center;
-  color: #33adff;
+  color: grey;
   background: white;
 }
 
@@ -74,5 +74,43 @@ h2 {
   display: flex;
   flex-direction: row;
   align-content: center;
+}
+
+.nav {
+  display: flex;
+  padding: 5px;
+  align-items: center;
+}
+
+.space-between {
+  justify-content: space-evenly;
+}
+
+a {
+  font-weight: bold;
+  text-decoration: none;
+}
+
+a:link {
+  color: palevioletred;
+}
+
+a:visited {
+  color: palevioletred;
+}
+
+a:hover {
+  color: #cc0066;
+}
+
+label {
+  /* display: flex; */
+  display: block;
+  /* flex-direction: row; */
+  align-content: center;
+  margin-bottom: 10px;
+}
+.italic {
+  font-style: italic;
 }
 

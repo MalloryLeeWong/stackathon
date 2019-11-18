@@ -37,9 +37,6 @@ class Donate extends Component {
         // Set web3, accounts, and contract to the state.
         this.setState({ web3, accounts, contract: instance });
 
-        // console.log('Hompage: this.state.accounts', this.state.accounts)
-        // console.log('Hompage: this.state.contract', this.state.contract)
-
       } catch (error) {
         alert(
           `Failed to load web3, accounts, or contract.`,
@@ -74,15 +71,13 @@ class Donate extends Component {
   }
 
   render() {
-    // console.log('DONATE: this.props.accounts[0]', this.props.accounts[0])
-    // console.log('Donate: this.props', this.props)
     return (
       <div>
         <div>
           <Navbar/>
         </div>
       <div className="Contract">
-        <p>Donate today:</p>
+        <p>Donate today and your contribution will be automatically disbursed when an 8.0 earthquake occurs:</p>
       <form onSubmit={this.handleSubmit}>
         <label>
           Donation Amount (ETH):
@@ -107,7 +102,7 @@ class Donate extends Component {
         <button className="btn" type="submit">Donate</button>
       </form>
       <div>
-        <p>Donation Status: {this.state.message}</p>
+        <p className="italic">Donation Status: {this.state.message}</p>
       </div>
       </div>
       </div>

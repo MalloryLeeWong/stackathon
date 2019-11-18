@@ -37,9 +37,6 @@ class Oracle extends Component {
         // Set web3, accounts, and contract to the state.
         this.setState({ web3, accounts, contract: instance });
 
-        // console.log('Hompage: this.state.accounts', this.state.accounts)
-        // console.log('Hompage: this.state.contract', this.state.contract)
-
       } catch (error) {
         alert(
           `Failed to load web3, accounts, or contract.`,
@@ -85,7 +82,7 @@ class Oracle extends Component {
         <p>If you are the oracle, please enter latest seismicity data:</p>
       <form onSubmit={this.handleSubmit}>
         <label>
-          Seismicity Level:
+          Seismicity (nearest whole number):
           <input
             type="number"
             name="seismicity"
@@ -95,7 +92,7 @@ class Oracle extends Component {
         </label>
 
         <label>
-          Oracle's Address:
+          Data Provider's Address:
           <input
             type="text"
             name="address"
@@ -107,7 +104,7 @@ class Oracle extends Component {
         <button className="btn" type="submit">Update</button>
       </form>
       <div>
-        <p>Data Status: {this.state.message}</p>
+        <p className="italic">Data Status: {this.state.message}</p>
       </div>
       </div>
       </div>
