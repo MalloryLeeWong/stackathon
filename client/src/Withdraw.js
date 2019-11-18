@@ -69,7 +69,7 @@ class Withdraw extends Component {
           />
         </label>
 
-        <button type="submit">Withdraw Donation</button>
+        <button className="btn" type="submit">Withdraw Donation</button>
       </form>
       <div>
         <p>Withdrawal Status: {this.state.message}</p>

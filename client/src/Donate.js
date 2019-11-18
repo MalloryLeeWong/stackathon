@@ -62,7 +62,7 @@ class Donate extends Component {
           />
         </label>
 
-        <button type="submit">Donate</button>
+        <button className="btn" type="submit">Donate</button>
       </form>
       <div>
         <p>Donation Status: {this.state.message}</p>

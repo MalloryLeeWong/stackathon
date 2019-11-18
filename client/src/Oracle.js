@@ -64,7 +64,7 @@ class Oracle extends Component {
           />
         </label>
 
-        <button type="submit">Update</button>
+        <button className="btn" type="submit">Update</button>
       </form>
       <div>
         <p>Data Status: {this.state.message}</p>
