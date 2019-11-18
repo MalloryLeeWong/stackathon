@@ -1,4 +1,7 @@
 import React, { Component } from "react";
+import Navbar from "./Navbar"
+import SimpleStorageContract from "./contracts/SimpleStorage.json";
+import getWeb3 from "./getWeb3";
 
 class Withdraw extends Component {
   constructor(props) {
@@ -7,11 +10,44 @@ class Withdraw extends Component {
       ETH: 0,
       addressCharity: '',
       addressDonor: '',
-      message: 'Please submit donation details above.'
+      message: 'Please submit donation details above.',
+      web3: null,
+      accounts: null,
+      contract: null
     }
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleChange = this.handleChange.bind(this)
     }
+
+    componentDidMount = async () => {
+      try {
+        // Get network provider and web3 instance.
+        const web3 = await getWeb3();
+
+        // Use web3 to get the user's accounts.
+        const accounts = await web3.eth.getAccounts();
+
+        // Get the contract instance.
+        const networkId = await web3.eth.net.getId();
+        const deployedNetwork = SimpleStorageContract.networks[networkId];
+        const instance = new web3.eth.Contract(
+          SimpleStorageContract.abi,
+          deployedNetwork && deployedNetwork.address,
+        );
+
+        // Set web3, accounts, and contract to the state.
+        this.setState({ web3, accounts, contract: instance });
+
+        console.log('Hompage: this.state.accounts', this.state.accounts)
+        console.log('Hompage: this.state.contract', this.state.contract)
+
+      } catch (error) {
+        alert(
+          `Failed to load web3, accounts, or contract.`,
+        );
+        console.error(error);
+      }
+    };
 
   handleChange(event) {
     this.setState({
@@ -25,13 +61,14 @@ class Withdraw extends Component {
 
       this.setState({message: 'Waiting on transaction success...'})
 
-      const response = await this.props.contract.methods.withdraw(this.state.addressCharity).send({ from: this.state.addressCharity});
+      const response = await this.state.contract.methods.withdraw(this.state.addressCharity).send({ from: this.state.addressCharity});
 
       console.log('RESPONSE', response)
 
       this.setState({
         name: '',
-        address: '',
+        addressDonor: '',
+        addressCharity: '',
         message: 'Donation withdrawn successfully!'
       });
     } catch (error) {
@@ -44,10 +81,12 @@ class Withdraw extends Component {
   }
 
   render() {
-    // console.log('this.state.addressDonor', this.state.addressDonor)
-    console.log('WITHDRAW: this.props.accounts[0]', this.props.accounts[0])
     return (
       <div>
+        <div>
+          <Navbar/>
+        </div>
+      <div className="Withdraw">
         <p>If you are the charity, please click here to withdraw the donation:</p>
       <form onSubmit={this.handleSubmit}>
       <label>
@@ -73,6 +112,7 @@ class Withdraw extends Component {
       </form>
       <div>
         <p>Withdrawal Status: {this.state.message}</p>
+      </div>
       </div>
       </div>
     );

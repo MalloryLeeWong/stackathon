@@ -61,3 +61,18 @@ h2 {
   color: white;
 }
 
+.nav-links {
+  font-size: 1vw;
+  text-decoration: none;
+  color: black;
+  padding-left: 20px;
+  align-items: center;
+  text-align: left;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+}
+

@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import SimpleStorageContract from "./contracts/SimpleStorage.json";
 import getWeb3 from "./getWeb3";
-import Donate from "./Donate"
-import Withdraw from "./Withdraw"
-import Oracle from "./Oracle"
+// import Donate from "./Donate"
+// import Withdraw from "./Withdraw"
+// import Oracle from "./Oracle"
+import Navbar from "./Navbar"
+// import {withRouter as Router, Route, Switch, Link} from 'react-router-dom'
 import "./App.css";
 
-class App extends Component {
+class Homepage extends Component {
   state = {
     web3: null,
     accounts: null,
@@ -29,40 +31,49 @@ class App extends Component {
         deployedNetwork && deployedNetwork.address,
       );
 
-      // Set web3, accounts, and contract to the state, and then proceed with an
-      // example of interacting with the contract's methods.
-      // this.setState({ web3, accounts, contract: instance }, this.runExample);
+      // Set web3, accounts, and contract to the state.
       this.setState({ web3, accounts, contract: instance });
+
+      // console.log('Hompage: this.state.accounts', this.state.accounts)
+      // console.log('Hompage: this.state.contract', this.state.contract)
+
     } catch (error) {
       alert(
-        `Failed to load web3, accounts, or contract. Check console for details.`,
+        `Failed to load web3, accounts, or contract.`,
       );
       console.error(error);
     }
   };
 
-  // runExample = async () => {
-  //   const { accounts, contract } = this.state;
-
-  //   // Stores a given value, 5 by default.
-  //   await contract.methods.set(5).send({ from: accounts[0] });
-
-  //   // Get the value from the contract to prove it worked.
-  //   const response = await contract.methods.get().call();
-
-  //   // Update state with the result.
-  //   this.setState({ storageValue: response });
-  // };
-
   render() {
     if (!this.state.web3) {
       return <div>Loading Web3, accounts, and contract...</div>;
     }
+    // return (
+    //   <div className="App">
+    //     {/* <h1>AidTrace</h1>
+    //     <h2>Make a donation today that you can trace.</h2> */}
+    //     <Navbar web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
+    //     <br></br>
+    //     <div className="Contract">
+    //       <Donate web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
+    //     </div>
+    //     <br></br>
+    //     <div className="Oracle">
+    //       <Oracle web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
+    //     </div>
+    //     <br></br>
+    //     <div className="Withdraw">
+    //       <Withdraw web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
+    //     </div>
+    //   </div>
+    // );
     return (
       <div className="App">
-        <h1>AidTrace</h1>
-        <h2>Make a donation today that you can trace.</h2>
-        <br></br>
+        {/* <h1>AidTrace</h1>
+        <h2>Make a donation today that you can trace.</h2> */}
+        <Navbar />
+        {/* <br></br>
         <div className="Contract">
           <Donate web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
         </div>
@@ -73,10 +84,10 @@ class App extends Component {
         <br></br>
         <div className="Withdraw">
           <Withdraw web3={this.state.web3} contract={this.state.contract} accounts={this.state.accounts}/>
-        </div>
+        </div> */}
       </div>
     );
   }
 }
 
-export default App;
+export default Homepage;
