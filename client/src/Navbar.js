@@ -5,7 +5,7 @@ const Navbar = (props) => {
   return (
     <Router>
       <div className="App">
-        <h1>AidTrace</h1>
+        <h1>Earthquake Relief Trace</h1>
         <h2>Make a donation for earthquake relief that you can trace.</h2>
       <div className="nav space-between">
         <Link to="/">Home</Link>
