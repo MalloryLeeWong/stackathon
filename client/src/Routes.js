@@ -1,14 +1,13 @@
-import React, {Component} from 'react'
-// import {withRouter as Router, Route, Switch} from 'react-router-dom'
+import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import Homepage from './Homepage'
-import Donate from './Donate'
-import Oracle from './Oracle'
-import Withdraw from './Withdraw'
+import Donate from './Donate';
+import Homepage from './Homepage';
+import Oracle from './Oracle';
+import Withdraw from './Withdraw';
 
 class Routes extends Component {
   componentDidMount() {
-
+    // TODO: Remove this if not needed
   }
 
   render() {
@@ -22,10 +21,9 @@ class Routes extends Component {
             <Route exact path="/withdraw" component={Withdraw} />
           </Switch>
         </div>
-     </Router>
-
-    )
+      </Router>
+    );
   }
 }
 
-export default Routes
+export default Routes;

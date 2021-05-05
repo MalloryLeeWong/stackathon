@@ -52,12 +52,7 @@ h2 {
 }
 
 .btn:focus {
-  background-image: linear-gradient(
-    to right,
-    #69aece,
-    #36aab9,
-    #5ab133
-  );
+  background-image: linear-gradient(to right, #69aece, #36aab9, #5ab133);
   color: white;
 }
 
@@ -104,13 +99,11 @@ a:hover {
 }
 
 label {
-  /* display: flex; */
   display: block;
-  /* flex-direction: row; */
   align-content: center;
   margin-bottom: 10px;
 }
+
 .italic {
   font-style: italic;
 }
-
