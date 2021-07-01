@@ -21,7 +21,7 @@ contract SimpleStorage {
     deposits[charity] = deposits[charity] + amount;
   }
 
-  // Set payout condition as fulfilled only when external data of greater than 8.0 seismicity is provided to the smart contract.
+  // Set payout condition as fulfilled only when external data of greater than 7 seismicity is provided to the smart contract.
   function determinePayout(uint seismicity, address oracle) public {
     require(msg.sender == oracle, "Only the oracle can determine the payout");
     if (seismicity > 7) {
@@ -33,7 +33,7 @@ contract SimpleStorage {
 
   // Require that only a specified charity's wallet can withdraw the payment when the payout condition is met.
   function withdraw(address payable charity) public payable {
-    require(payout == true, "Your donation will be sent once an earthquake of at least 7.0 is reported.");
+    require(payout == true, "Your donation will be sent once an earthquake of greater than 7.0 is reported.");
     require(msg.sender == charity, "Only the designated charity can withdraw the donation.");
     uint payment = deposits[charity];
     deposits[charity] = 0;
