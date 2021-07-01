@@ -11,8 +11,9 @@ Earthquake Relief Tracer is a prototype for a decentralized web application buil
 - Truffle
 - Ganache
 - MetaMask
+- Remix IDE
 
-On the back end, the app's escrow functionality is built with a smart contract written in Solidity. When external data provided to the smart contract fulfills a pre-defined condition, the smart contract will automatically execute by disbursing ETH collected from one wallet to another specified wallet.
+On the back end, the app's escrow functionality is built with a smart contract written in Solidity. When external data provided to the smart contract fulfills a pre-defined condition, the smart contract will automatically execute by disbursing ETH collected from one wallet to another specified wallet. Remix was the IDE used to develop and test the smart contract.
 
 On the front end, React was used to create a single page application and dynamically render payment status updates in a performant way. Web3 was used to programmatically access the smart contract and Ethereum blockchain from within React components.
 
@@ -35,9 +36,10 @@ This app was bootstrapped with a Truffle Box that utilizes Create React App.
 
 Note: Until navigation is fixed, the browser must be refreshed to render the forms in each view for donating, updating the seismic data, and withdrawing the funds.
 
-# Planned bug fixes and feature updates:
+# Planned bug fixes and updates:
 
-- Fix React routes so page refresh isn't required to render each view
+- Fix React routes so page refresh isn't required to render each view.
 - Build out true oracle functionality to feed real-world seismic data figures into the smart contract to replace the existing manual input option for entering seismic data.
-- Use Drizzle components to improve UX/UI and reduce manual configuration
+- Use Drizzle components to improve UX/UI, keep code more DRY by re-using modular components, and reduce manual configuration.
 - Refactor React class components to use functional components and hooks where possible
+- Create develop branch so pull requests can be made to develop first before those commits are merged to master.
